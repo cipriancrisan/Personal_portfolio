@@ -1,19 +1,41 @@
 // Specific CSS for your home-page
 
-.profile {
-  height: 70vh;
-  width: 100%;
-  background-image: url(profile/ciprian);
-  background-size: cover;
-  background-position: center;
-}
+// .profile {
+//   height: 70vh;
+//   width: 100%;
+//   background-image: url(profile/ciprian);
+//   background-size: cover;
+//   background-position: center;
+// }
 
-.hey-there {
-  float: right;
-}
+// .hey-there {
+//   float: right;
+// }
 
-.poster {
-  height: 100%;
+// .poster {
+//   height: 100%;
+//   width: 100%;
+//   background-image: url(background/background01.jpeg);
+// }
+
+.gopro {
+  background-color: #333;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
-  background-image: url(background/background01.jpeg);
+  height: 100vh;
+
+  .sidebar {
+    width: 30%;
+    height: 100%;
+    background-color: red;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
 }
