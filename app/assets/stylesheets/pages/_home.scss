@@ -18,7 +18,7 @@
 //   background-image: url(background/background01.jpeg);
 // }
 
-.gopro {
+.background-container {
   background-color: #333;
   display: flex;
   justify-content: flex-start;
@@ -27,7 +27,7 @@
   height: 100vh;
 
   .sidebar {
-    width: 30%;
+    width: 20%;
     height: 100%;
     background-color: red;
     color: #fff;
@@ -37,5 +37,20 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
+  }
+
+  .profile-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .scaled-profile-photo {
+    // max-width: 20%;
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    display: flex;
   }
 }
