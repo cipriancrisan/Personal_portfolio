@@ -17,40 +17,188 @@
 //   width: 100%;
 //   background-image: url(background/background01.jpeg);
 // }
+// --------------------------------------------------
+// .background-container {
+//   background-color: #333;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: flex-start;
+//   width: 100%;
+//   height: 100vh;
 
+//   .sidebar {
+//     width: 20%;
+//     height: 100%;
+//     background-color: red;
+//     color: #fff;
+//     padding: 20px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     align-items: center;
+//     text-align: center;
+//   }
+
+//   .content {
+//     display: flex;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//     flex: 1;
+
+//     .main-content {
+//       // width: 80%;
+//       // height: 100%;
+//       background-color: orange;
+//       // padding: 20px;
+//       // display: flex;
+//       // flex-direction: column;
+//       // justify-content: space-between;
+//       // align-items: center;
+//       // text-align: center;
+
+//       .fixed-buttons {
+//         background-color: green;
+//         display: flex;
+//         justify-content: flex-end;
+//         align-items: center;
+//         padding: 25px;
+
+//         .contact-button {
+//           background-color: #fff;
+//           color: #333;
+//           padding: 10px 20px;
+//           border-radius: 5px;
+//           font-size: 1.2rem;
+//           font-weight: 600;
+//           text-decoration: none;
+//           margin-left: 20px;
+//         }
+//       }
+//     }
+//   }
+
+//   .profile-picture {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100vh;
+//   }
+
+//   .scaled-profile-photo {
+//     // max-width: 20%;
+//     width: 300px;
+//     height: 400px;
+//     object-fit: cover;
+//     display: flex;
+//   }
+// }
+//--------------------------------------------------
 .background-container {
-  background-color: #333;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
   height: 100vh;
 
   .sidebar {
-    width: 20%;
-    height: 100%;
-    background-color: red;
-    color: #fff;
-    padding: 20px;
+    flex: 0 0 auto; // to be explained later
+    max-width: 300px;
+    background-color: green;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     text-align: center;
+    justify-content: space-between;
+    padding: 20px;
+
+    .name {
+      h1, h2 {
+        font-family: 'Nunito', sans-serif;
+      }
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        letter-spacing: 0.3em;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      outline: none;
+    }
+
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+
+    nav {
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        font-size: 1.6rem;
+        font-family: 'Nunito', sans-serif;
+
+        li {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .social-media-logos {
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        font-size: 2rem;
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+      }
+    }
   }
 
-  .profile-picture {
+  .content {
+    flex: 1;
+    background-color: lightblue;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+    flex-direction: column;
 
-  .scaled-profile-photo {
-    // max-width: 20%;
-    width: 300px;
-    height: 400px;
-    object-fit: cover;
-    display: flex;
+    header {
+      flex: auto 1;
+      max-height: 100px;
+      background-color: lightcoral;
+    }
+
+    .main-content {
+      display: flex;
+      flex: 2;
+
+      .profile-pic {
+        flex: 0 0 auto;
+        min-width: 100px;
+        max-width: 300px;
+        background-color: gray;
+
+        .scaled-profile-photo {
+          width: 300px;
+          height: 400px;
+          object-fit: cover;
+        }
+      }
+
+      .description {
+        flex: 1;
+        background-color: lightgreen;
+      }
+    }
   }
 }

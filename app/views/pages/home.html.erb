@@ -24,7 +24,7 @@
   </div>
 </div> %>
 
-<div class="background-container">
+<%# <div class="background-container">
   <div class="sidebar">
     <div class="personal-info">
       <div class="name">
@@ -55,9 +55,59 @@
   <div class="content">
     <div class="profile-picture">
       <%= image_tag('profile/profile_photo.jpg', class: 'scaled-profile-photo') %>
-    </div>
+    <%# </div>
     <div class="main-content">
-
+      <section class="fixed-buttons">
+        <a href="#">DOWNLOAD MY CV</a>
+        <button id="getInTouchButton" class="contact-button">GET IN TOUCH</button>
+      </section>
+      <section class="introduction">
+        <h1>Hello! I am Ciprian, a Tech Pioneer on a quest to change the world!</h1>
+        <p>Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
+      </section>
     </div>
   </div>
+</div> %>
+
+<div class="background-container">
+  <aside class="sidebar">
+    <section class="name">
+      <h1>Ciprian Crisan</h1>
+      <h2>Tech Pioneer</h2>
+    </section>
+    <nav>
+      <ul>
+        <li><a href="#">INTRODUCTION</a></li>
+        <li><a href="#">ABOUT ME</a></li>
+        <li><a href="#">EXPERIENCE</a></li>
+        <li><a href="#">SKILLS</a></li>
+        <li><a href="#">PROJECTS</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </nav>
+    <section class="social-media-logos">
+      <ul>
+        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="#"><i class="fab fa-github"></i></a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+      </ul>
+    </section>
+  </aside>
+
+  <main class="content">
+      <header>
+          <button class="btn-download">DOWNLOAD MY CV</button>
+          <button class="btn-contact">GET IN TOUCH</button>
+      </header>
+      <div class="main-content">
+        <section class="profile-pic">
+          <%= image_tag('profile/profile_photo.jpg', class: 'scaled-profile-photo') %>
+        </section>
+        <section class="description">
+            <h1>Hello! I am Tom,</h1>
+            <h2>a Tech Pioneer on a quest to change the world!</h2>
+            <p>Lorem Ipsum is simply dummy text...</p>
+        </section>
+      </div>
+  </main>
 </div>
