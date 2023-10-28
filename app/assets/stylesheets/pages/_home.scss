@@ -122,7 +122,7 @@
       h2 {
         font-size: 1.6rem;
         font-weight: 500;
-        letter-spacing: 0.3em;
+        letter-spacing: 0.35em;
       }
     }
 
@@ -146,6 +146,7 @@
         text-align: left;
         font-size: 1.6rem;
         font-family: 'Nunito', sans-serif;
+        letter-spacing: 0.1em;
 
         li {
           margin-bottom: 10px;
@@ -161,7 +162,20 @@
         font-size: 2rem;
         display: flex;
         flex-direction: row;
-        gap: 3rem;
+        gap: 3.8rem;
+      }
+
+      .fa-linkedin-in, .fa-github, .fa-envelope {
+        transition: transform 0.6s ease-out;
+      }
+
+      .fa-linkedin-in:hover, .fa-github:hover, .fa-envelope:hover {
+        color: #fff;
+        //background-color: #1A1A1A;
+        //box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+        transform: scale(1.10);
+
+        transform: translateY(-3px);
       }
     }
   }
@@ -176,6 +190,100 @@
       flex: auto 1;
       max-height: 100px;
       background-color: lightcoral;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 20px;
+
+      .btn-download {
+        appearance: none;
+        background-color: transparent;
+        border: 2px solid #1A1A1A;
+        border-radius: 15px;
+        box-sizing: border-box;
+        color: #3B3B3B;
+        cursor: pointer;
+        display: inline-block;
+        font-family: 'Nunito', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+        margin: 0;
+        min-height: 60px;
+        min-width: 0;
+        outline: none;
+        padding: 16px 24px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        //width: 100%;
+        will-change: transform;
+      }
+
+      .btn-download:disabled {
+        pointer-events: none;
+      }
+
+      .btn-download:hover {
+        color: #fff;
+        background-color: #1A1A1A;
+        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+        transform: translateY(-2px);
+      }
+
+      .btn-download:active {
+        box-shadow: none;
+        transform: translateY(0);
+      }
+
+      .btn-contact {
+        appearance: none;
+        background-color: #000000;
+        border: 2px solid #1A1A1A;
+        border-radius: 15px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: 'Nunito', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+        margin: 0;
+        min-height: 60px;
+        min-width: 0;
+        outline: none;
+        padding: 16px 24px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        //width: 100%;
+        will-change: transform;
+      }
+
+      .btn-contact:disabled {
+        pointer-events: none;
+      }
+
+      .btn-contact:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+        transform: translateY(-2px);
+      }
+
+      .btn-contact:active {
+        box-shadow: none;
+        transform: translateY(0);
+      }
+
+      .btn-download, .btn-contact {
+        margin-left: 10px;
+      }
     }
 
     .main-content {
@@ -185,13 +293,24 @@
       .profile-pic {
         flex: 0 0 auto;
         min-width: 100px;
-        max-width: 300px;
+        max-width: 400px;
         background-color: gray;
+        display: flex;
+        align-items: center;
+        padding: 0 20px 0 20px;
 
         .scaled-profile-photo {
           width: 300px;
           height: 400px;
           object-fit: cover;
+          border-radius: 10px;
+          box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+          filter: grayscale(100%);
+          transition: filter 1s ease-out;
+        }
+
+        .scaled-profile-photo:hover {
+          filter: grayscale(0%);
         }
       }
 
