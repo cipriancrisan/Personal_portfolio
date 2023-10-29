@@ -94,23 +94,31 @@
 // }
 //--------------------------------------------------
 .background-container {
+  padding: 0 10%;
   display: flex;
   height: 100vh;
+  //background: rgb(0,128,128);
+  //background: linear-gradient(27deg, rgba(0,128,128,1) 100%, rgba(245,245,245,1) 40%);
+  background: rgb(245,245,245);
+  //background: linear-gradient(0deg, rgba(245,245,245,1) 0%, rgba(0,128,128,1) 100%);
+  background: linear-gradient(0deg, rgba(207,204,204,1) 0%, rgba(0,128,128,1) 100%);
 
   .sidebar {
     flex: 0 0 auto; // to be explained later
     max-width: 300px;
-    background-color: green;
+    //background-color: green;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: space-between;
     padding: 20px;
+    z-index: 2;
 
     .name {
       h1, h2 {
         font-family: 'Nunito', sans-serif;
+        color: #fff
       }
 
       h1 {
@@ -128,7 +136,7 @@
 
     a {
       text-decoration: none;
-      color: inherit;
+      color: #fff;
       cursor: pointer;
       outline: none;
     }
@@ -136,6 +144,7 @@
     a:hover,
     a:focus {
         text-decoration: underline;
+        color: #333;
     }
 
     nav {
@@ -167,29 +176,57 @@
 
       .fa-linkedin-in, .fa-github, .fa-envelope {
         transition: transform 0.6s ease-out;
+        color: #333;
       }
 
       .fa-linkedin-in:hover, .fa-github:hover, .fa-envelope:hover {
-        color: #fff;
+        color: #FF6B6B;
         //background-color: #1A1A1A;
         //box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
         transform: scale(1.10);
 
-        transform: translateY(-3px);
+        transform: translateY(-4px);
       }
+    }
+  }
+
+  .profile-pic {
+    flex: 0 0 auto;
+    min-width: 100px;
+    max-width: 400px;
+    //background-color: gray;
+    display: flex;
+    align-items: center;
+    padding: 0 20px 0 20px;
+    z-index: 2;
+
+    .scaled-profile-photo {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: rgba(152, 251, 152, 0.4) 5px 5px, rgba(152, 251, 152, 0.3) 10px 10px, rgba(152, 251, 152, 0.2) 15px 15px, rgba(152, 251, 152, 0.1) 20px 20px, rgba(152, 251, 152, 0.05) 25px 25px;
+      filter: grayscale(100%);
+
+      transition: filter 3s ease-out;
+    }
+
+    .scaled-profile-photo:hover {
+      filter: grayscale(0%);
+      transition: filter 1s ease;
     }
   }
 
   .content {
     flex: 1;
-    background-color: lightblue;
+    //background-color: lightblue;
     display: flex;
     flex-direction: column;
 
     header {
       flex: auto 1;
       max-height: 100px;
-      background-color: lightcoral;
+      //background-color: lightcoral;
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -229,7 +266,7 @@
 
       .btn-download:hover {
         color: #fff;
-        background-color: #1A1A1A;
+        background-color: #FF6B6B;
         box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
         transform: translateY(-2px);
       }
@@ -241,8 +278,8 @@
 
       .btn-contact {
         appearance: none;
-        background-color: #000000;
-        border: 2px solid #1A1A1A;
+        background-color: #FF6B6B;
+        border: 2px solid #FF6B6B;
         border-radius: 15px;
         box-sizing: border-box;
         color: #FFFFFF;
@@ -290,35 +327,9 @@
       display: flex;
       flex: 2;
 
-      .profile-pic {
-        flex: 0 0 auto;
-        min-width: 100px;
-        max-width: 400px;
-        background-color: gray;
-        display: flex;
-        align-items: center;
-        padding: 0 20px 0 20px;
-
-        .scaled-profile-photo {
-          width: 300px;
-          height: 400px;
-          object-fit: cover;
-          border-radius: 10px;
-          box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
-          filter: grayscale(100%);
-
-          transition: filter 3s ease-out;
-        }
-
-        .scaled-profile-photo:hover {
-          filter: grayscale(0%);
-          transition: filter 1s ease;
-        }
-      }
-
       .description {
         flex: 1;
-        background-color: lightgreen;
+        //background-color: lightgreen;
         padding: 40px 20px 20px 20px;
 
         .label-container {
@@ -328,8 +339,8 @@
 
           .label-number {
             //background-color: #fff;
-            color: #333;
-            border: 2px solid #333;
+            color: #fff;
+            border: 2px solid #fff;
             border-radius: 45%;
             width: 35px;
             height: 45px;
@@ -343,7 +354,7 @@
         .label-title {
             font-size: 1.6rem;
             //font-weight: 600;
-            color: #333;
+            color: #fff;
             margin-right: 20px;
             font-family: 'Nunito', sans-serif;
             letter-spacing: 0.05em;
@@ -351,7 +362,7 @@
 
         .horizontal-line {
             flex-grow: 1;
-            border-top: 2px solid #333;
+            border-top: 2px solid #fff;
             border-bottom: none;
             margin: 0;
         }
@@ -365,12 +376,14 @@
           h1 {
             font-size: 4rem;
             font-weight: 800;
+            color: #1A1A1A;
             //letter-spacing: 0.1em;
           }
 
           h2 {
             font-size: 2.5rem;
             font-weight: 600;
+            color: #1A1A1A;
             //letter-spacing: 0.35em;
           }
 
@@ -378,10 +391,37 @@
             font-size: 1.6rem;
             font-weight: 400;
             margin-top: 20px;
+            color: #fff;
             //letter-spacing: 0.35em;
           }
         }
       }
+
+      .intro-icons-container {
+        margin-top: 40px;
+        margin-left: 55px;
+        overflow: hidden;
+        position: relative;
+        white-space: nowrap;  // Corrected here
+        animation: moveIcons 10s linear infinite;
+        z-index: 1;
+
+        .fa-mountain, .fa-person-biking, .fa-gears, .fa-laptop-code, .fa-people-group {
+          font-size: 4.5rem;
+          display: inline-block;
+          margin-right: 55px; // Adding margin to space out icons
+          color: #1A1A1A;
+        }
+      }
+
+      // @keyframes moveIcons {
+      //     0% {
+      //       transform: translateX(0%);
+      //     }
+      //     100% {
+      //       transform: translateX(-50%);
+      //     }
+      // }
     }
   }
 }
