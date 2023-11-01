@@ -77,7 +77,7 @@
     </section>
     <nav>
       <ul>
-        <li><a href="#">INTRODUCTION</a></li>
+        <li><a href="#">INTRO</a></li>
         <li><a href="#">ABOUT ME</a></li>
         <li><a href="#">EXPERIENCE</a></li>
         <li><a href="#">SKILLS</a></li>
@@ -94,9 +94,22 @@
     </section>
   </aside>
 
-  <section class="profile-pic">
+  <%# <section class="profile-pic">
     <%= image_tag('profile/profile_photo.jpg', class: 'scaled-profile-photo', alt: "Ciprian's profile picture") %>
-  </section>
+  <%# </section> %>
+
+  <div id="image-track">
+    <%= image_tag('profile/me-huayna.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
+    <%= image_tag('profile/profile_photo.jpg', class: 'image', alt: "Ciprian's profile picture") %>
+    <%= image_tag('profile/me-paris.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
+    <%= image_tag('profile/me-trains.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
+    <%= image_tag('profile/me-triatlon.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
+    <%= image_tag('profile/me-motocross.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
+    <%= image_tag('profile/me-peru.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
+    <%= image_tag('profile/me-saint-malo.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
+    <%= image_tag('profile/me-salar.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
+    <%= image_tag('profile/me-swiss.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
+  </div>
 
   <main class="content">
       <header>
@@ -104,25 +117,102 @@
           <button class="btn-contact" role="button">GET IN TOUCH</button>
       </header>
       <div class="main-content">
-        <section class="description">
+        <section class="introduction">
           <div class="label-container">
             <div class="label-number">1</div>
             <div class="label-title">INTRODUCTION</div>
             <hr class="horizontal-line">
           </div>
-          <div class="description-text">
+          <div class="introduction-text">
             <h1>Hello! I am Ciprian,</h1>
             <h2>I'm passionate about technology and its potential to make a positive difference in our world.</h2>
             <p>As a junior full-stack web developer with a background in mechanical engineering, I am passionate about using technology to make a positive impact in the world. Being a sport and a nature enthusiast, the human-nature relationship represents the starting point of my every project. Through innovative solutions, my goal is to contribute meaningfully to society and make a positive impact on people's life around me.</p>
+            <%= image_tag('thumbnails/intro-timeline.png', class: 'intro-timeline', alt: "Ciprian's profile picture") %>
           </div>
-          <div class="intro-icons-container">
-            <i class="fa-solid fa-gears"></i>
-            <i class="fa-solid fa-laptop-code"></i>
+          <%# <div class="introduction-pic">
+            <%= image_tag('thumbnails/intro-timeline.png', class: 'intro-timeline', alt: "Ciprian's profile picture") %>
+          <%# </div> %>
+          <%# <div class="intro-icons-container">
+            <%= image_tag('thumbnails/engineer.jpg', class: 'eng-thumb', alt: "Ciprian's profile picture") %>
+          <%#  <i class="fa-solid fa-laptop-code"></i>
             <i class="fa-solid fa-people-group"></i>
             <i class="fa-solid fa-mountain"></i>
             <i class="fa-solid fa-person-biking"></i>
-          </div>
+          </div> %>
         </section>
+
+        <%# <section class="about-me">
+          <div class="label-container">
+            <div class="label-number">2</div>
+            <div class="label-title">ABOUT ME</div>
+            <hr class="horizontal-line">
+          </div>
+          <div class="about-me-text">
+            <p>With over five years of experience in the automotive industry, I am a passionate and skilled Technical Project Leader at Vitesco Technologies, a global leader in electrification solutions. My core competencies include finite element analysis (FEA), simulation, mechanical design, and project management. I am driven by the mission of creating innovative and sustainable products that reduce emissions and enhance mobility. I bring diverse perspectives and experiences to the team, as I have worked and studied in different countries and cultures, and learned multiple languages.
+
+            As a Technical Project Leader, I coordinate and manage the mechanical activities for product development, applying the PLC, MLC, and PM methods to respect the development process. I am responsible for planning, engineering requirements, and mechanical architecture, as well as leading the assigned mechanical team. I also collaborate with cross-functional teams and stakeholders to ensure the quality and efficiency of the projects. Some of the skills that I use and develop in this role are effort estimation, moderating, problem solving, and web development. I recently completed a full-stack web development bootcamp at Le Wagon, where I learned how to build web applications using JavaScript, Ruby, and APIs. I am always eager to learn new technologies and tools that can enhance my performance and creativity.</p>
+          </div>
+        </section> %>
       </div>
   </main>
 </div>
+
+<script>
+const imageTrack = document.getElementById('image-track');
+
+// Duplicating content for infinite scroll effect
+imageTrack.innerHTML += imageTrack.innerHTML;
+
+const scrollAmount = 600;  // The amount to scroll for each wheel event
+const smoothDuration = 60;  // Duration in milliseconds for the smooth scroll effect
+
+imageTrack.addEventListener('wheel', function(event) {
+    // Determine the scroll direction: 1 for Downwards, -1 for Upwards
+    let direction = event.deltaY > 0 ? 1 : -1;
+
+    // Calculate the target scroll position
+    let targetPosition = imageTrack.scrollTop + direction * scrollAmount;
+
+    // Apply smooth scroll to the target position
+    smoothScrollTo(targetPosition);
+
+    event.preventDefault();  // Prevent the default scroll behavior
+}, { passive: false });
+
+function smoothScrollTo(targetPosition) {
+    imageTrack.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+    });
+}
+
+imageTrack.addEventListener('scroll', function() {
+    if (imageTrack.scrollTop + imageTrack.clientHeight >= imageTrack.scrollHeight) {
+        setTimeout(() => {
+            customSmoothScrollTo(imageTrack, 0, 3000);  // 2000ms duration for going back up
+        }, 500);  // Give a slight delay before scrolling back to the top
+    }
+});
+
+function customSmoothScrollTo(element, targetPosition, duration) {
+    let startTime = null;
+    let startPosition = element.scrollTop;
+
+    function animate(time) {
+        if (startTime === null) startTime = time;
+        const timeElapsed = time - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);  // Ensure it's between 0 and 1
+
+        element.scrollTop = startPosition + (targetPosition - startPosition) * easeInOutQuad(progress);
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
+
+function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+}
+</script>

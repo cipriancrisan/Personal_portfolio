@@ -94,31 +94,46 @@
 // }
 //--------------------------------------------------
 .background-container {
-  padding: 0 10%;
+  padding-right: 1%;
   display: flex;
   height: 100vh;
   //background: rgb(0,128,128);
   //background: linear-gradient(27deg, rgba(0,128,128,1) 100%, rgba(245,245,245,1) 40%);
   background: rgb(245,245,245);
   //background: linear-gradient(0deg, rgba(245,245,245,1) 0%, rgba(0,128,128,1) 100%);
-  background: linear-gradient(0deg, rgba(207,204,204,1) 0%, rgba(0,128,128,1) 100%);
+  //background: linear-gradient(0deg, rgb(230, 226, 226) 0%, rgba(0,128,128,1) 100%); // this is the original
+  //background: linear-gradient(0deg, rgba(50, 50, 50, 1) 0%, rgba(112, 123, 124, 1) 100%); //moonlite metal
+  background: linear-gradient(0deg, rgba(95, 105, 110, 1) 0%, rgba(50, 50, 52, 1) 100%);
+
 
   .sidebar {
     flex: 0 0 auto; // to be explained later
     max-width: 300px;
     //background-color: green;
+    //background: linear-gradient(0deg, rgba(127, 124, 124, 1) 0%, rgba(0, 64, 64, 1) 100%);
+    //background: linear-gradient(0deg, rgba(0, 128, 128, 1) 0%, rgba(207, 204, 204, 1) 100%);
+    //background: linear-gradient(0deg, rgba(40, 40, 42, 1) 0%, rgba(80, 80, 82, 1) 100%); //graphene glow
+    background: linear-gradient(0deg, rgba(15, 15, 17, 1) 0%, rgba(55, 55, 57, 1) 100%);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: space-between;
     padding: 20px;
-    z-index: 2;
+    box-shadow: rgba(9, 30, 66, 0.25) 4px 0 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 
     .name {
       h1, h2 {
         font-family: 'Nunito', sans-serif;
-        color: #fff
+        color: #E8E8E8;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        &:hover {
+          color: #B0B0B0;
+          text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+          cursor: default;
+        }
       }
 
       h1 {
@@ -136,15 +151,17 @@
 
     a {
       text-decoration: none;
-      color: #fff;
+      color: #E8E8E8;
       cursor: pointer;
       outline: none;
     }
 
     a:hover,
-    a:focus {
-        text-decoration: underline;
-        color: #333;
+    a:focus,
+    a:active {
+        color: #FF6B6B;
+        font-weight: 500;
+        transition: color 0.3s ease, font-weight 0.3s ease;
     }
 
     nav {
@@ -176,7 +193,7 @@
 
       .fa-linkedin-in, .fa-github, .fa-envelope {
         transition: transform 0.6s ease-out;
-        color: #333;
+        color: #424242;
       }
 
       .fa-linkedin-in:hover, .fa-github:hover, .fa-envelope:hover {
@@ -190,38 +207,67 @@
     }
   }
 
-  .profile-pic {
+  #image-track > .image {
     flex: 0 0 auto;
-    min-width: 100px;
-    max-width: 400px;
-    //background-color: gray;
-    display: flex;
-    align-items: center;
-    padding: 0 20px 0 20px;
-    z-index: 2;
-
-    .scaled-profile-photo {
-      width: 300px;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: rgba(152, 251, 152, 0.4) 5px 5px, rgba(152, 251, 152, 0.3) 10px 10px, rgba(152, 251, 152, 0.2) 15px 15px, rgba(152, 251, 152, 0.1) 20px 20px, rgba(152, 251, 152, 0.05) 25px 25px;
-      filter: grayscale(100%);
-
-      transition: filter 3s ease-out;
-    }
-
-    .scaled-profile-photo:hover {
-      filter: grayscale(0%);
-      transition: filter 1s ease;
-    }
+    min-width: 300px;
+    max-width: 500px;
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    box-shadow: rgba(167, 173, 173, 0.3) 0px 8px 24px;
   }
+
+  #image-track {
+    max-height: 100vh;
+    overflow-y: scroll;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 4vmin;
+    padding: 20px 30px 20px 30px;
+  }
+
+  #image-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  // .profile-pic {
+  //   flex: 0 0 auto;
+  //   min-width: 100px;
+  //   max-width: 400px;
+  //   //background-color: gray;
+  //   display: flex;
+  //   align-items: center;
+  //   padding: 0 20px 0 25px;
+
+  //   z-index: 2;
+
+  //   .scaled-profile-photo {
+  //     width: 300px;
+  //     height: 400px;
+  //     object-fit: cover;
+  //     border-radius: 10px;
+  //     box-shadow: rgba(152, 251, 152, 0.4) 5px 5px, rgba(152, 251, 152, 0.3) 10px 10px, rgba(152, 251, 152, 0.2) 15px 15px, rgba(152, 251, 152, 0.1) 20px 20px, rgba(152, 251, 152, 0.05) 25px 25px;
+  //     filter: grayscale(100%);
+
+  //     transition: filter 3s ease-out;
+  //   }
+
+  //   .scaled-profile-photo:hover {
+  //     filter: grayscale(0%);
+  //     transition: filter 1s ease;
+  //   }
+  // }
 
   .content {
     flex: 1;
     //background-color: lightblue;
     display: flex;
     flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     header {
       flex: auto 1;
@@ -238,7 +284,7 @@
         border: 2px solid #1A1A1A;
         border-radius: 15px;
         box-sizing: border-box;
-        color: #3B3B3B;
+        color: #E8E8E8;
         cursor: pointer;
         display: inline-block;
         font-family: 'Nunito', sans-serif;
@@ -325,63 +371,39 @@
 
     .main-content {
       display: flex;
+      flex-direction: column;
       flex: 2;
+      //background-image: linear-gradient(43deg, rgba(8, 174, 234, 0.1) 0%, rgba(42, 245, 152, 0.1) 100%);
 
-      .description {
+      margin-top: 1%;
+      margin-left: 4%;
+      margin-right: 20px;
+      border-radius: 30px;
+
+      .introduction, .about-me {
         flex: 1;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
         //background-color: lightgreen;
         padding: 40px 20px 20px 20px;
 
-        .label-container {
-          display: flex;
-          align-items: center;
-          position: relative;
-
-          .label-number {
-            //background-color: #fff;
-            color: #fff;
-            border: 2px solid #fff;
-            border-radius: 45%;
-            width: 35px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            margin-right: 20px;
-        }
-
-        .label-title {
-            font-size: 1.6rem;
-            //font-weight: 600;
-            color: #fff;
-            margin-right: 20px;
-            font-family: 'Nunito', sans-serif;
-            letter-spacing: 0.05em;
-        }
-
-        .horizontal-line {
-            flex-grow: 1;
-            border-top: 2px solid #fff;
-            border-bottom: none;
-            margin: 0;
-        }
-        }
-
-        .description-text {
+        .introduction-text, .about-me-text {
           font-family: 'Nunito', sans-serif;
           margin-top: 20px;
           margin-left: 55px;
 
           h1 {
-            font-size: 4rem;
+            font-size: 5rem;
             font-weight: 800;
             color: #1A1A1A;
             //letter-spacing: 0.1em;
           }
 
           h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 600;
             color: #1A1A1A;
             //letter-spacing: 0.35em;
@@ -395,6 +417,50 @@
             //letter-spacing: 0.35em;
           }
         }
+        .intro-timeline {
+          width: 1194.66px;
+          height: 676px;
+          object-fit: cover;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      .label-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .label-number {
+          //background-color: #fff;
+          color: #fff;
+          border: 2px solid #fff;
+          border-radius: 45%;
+          width: 35px;
+          height: 45px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+          margin-right: 20px;
+      }
+
+      .label-title {
+          font-size: 1.6rem;
+          //font-weight: 600;
+          color: #fff;
+          margin-right: 20px;
+          font-family: 'Nunito', sans-serif;
+          letter-spacing: 0.05em;
+      }
+
+      .horizontal-line {
+          flex-grow: 1;
+          border-top: 2px solid #fff;
+          border-bottom: none;
+          margin: 0;
+      }
       }
 
       .intro-icons-container {
@@ -406,6 +472,13 @@
         animation: moveIcons 10s linear infinite;
         z-index: 1;
 
+        .eng-thumb {
+          width: 300px;
+          height: 300px;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+
         .fa-mountain, .fa-person-biking, .fa-gears, .fa-laptop-code, .fa-people-group {
           font-size: 4.5rem;
           display: inline-block;
@@ -413,15 +486,7 @@
           color: #1A1A1A;
         }
       }
-
-      // @keyframes moveIcons {
-      //     0% {
-      //       transform: translateX(0%);
-      //     }
-      //     100% {
-      //       transform: translateX(-50%);
-      //     }
-      // }
     }
   }
+
 }
