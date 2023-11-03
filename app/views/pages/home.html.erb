@@ -127,7 +127,7 @@
             <h1>Hello! I am Ciprian,</h1>
             <h2>I'm passionate about technology and its potential to make a positive difference in our world.</h2>
             <p>As a junior full-stack web developer with a background in mechanical engineering, I am passionate about using technology to make a positive impact in the world. Being a sport and a nature enthusiast, the human-nature relationship represents the starting point of my every project. Through innovative solutions, my goal is to contribute meaningfully to society and make a positive impact on people's life around me.</p>
-            <%= image_tag('thumbnails/intro-timeline.png', class: 'intro-timeline', alt: "Ciprian's profile picture") %>
+            <%# <%= image_tag('thumbnails/intro-timeline.png', class: 'intro-timeline', alt: "Ciprian's profile picture") %> %>
           </div>
           <%# <div class="introduction-pic">
             <%= image_tag('thumbnails/intro-timeline.png', class: 'intro-timeline', alt: "Ciprian's profile picture") %>
@@ -189,8 +189,8 @@ function smoothScrollTo(targetPosition) {
 imageTrack.addEventListener('scroll', function() {
     if (imageTrack.scrollTop + imageTrack.clientHeight >= imageTrack.scrollHeight) {
         setTimeout(() => {
-            customSmoothScrollTo(imageTrack, 0, 3000);  // 2000ms duration for going back up
-        }, 500);  // Give a slight delay before scrolling back to the top
+            customSmoothScrollTo(imageTrack, 0, 1000);  // 2000ms duration for going back up
+        }, 50);  // Give a slight delay before scrolling back to the top
     }
 });
 
