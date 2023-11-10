@@ -308,14 +308,14 @@
         justify-content: flex-start;
 
         //background-color: lightgreen;
-        padding: 40px 20px 20px 20px;
+        padding: 40px 250px 20px 250px;
 
         .introduction-text, .about-me-text, .experience-text, .skills-text, .projects-text {
           margin-top: 20px;
           margin-left: 55px;
 
           h1 {
-            font-size: 5rem;
+            font-size: 4rem;
             font-weight: 800;
             color: #EFEFEF;
             font-family: 'Raleway', sans-serif;
@@ -323,7 +323,7 @@
           }
 
           h2 {
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 600;
             color: #EFEFEF;
             font-family: 'Raleway', sans-serif;
@@ -331,10 +331,10 @@
           }
 
           p {
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             font-weight: 400;
             margin-top: 20px;
-            color: #8ABAD3FF;
+            color: #bebec1;
             font-family: 'Nunito', sans-serif;
             //letter-spacing: 0.35em;
           }
@@ -506,8 +506,8 @@
           font-family: 'Nunito', sans-serif;
 
           .image-skill {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             margin-bottom: 10%;
           }
         }
@@ -516,8 +516,8 @@
       .projects-container {
         display: flex;
         flex-direction: row;
-        align-items: flex-end;
-        align-content: flex-end;
+        align-items: center;
+        align-content: center;
         justify-content: space-between;
         padding: 40px 20px 20px 0;
 
