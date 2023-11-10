@@ -300,7 +300,7 @@
       margin-right: 20px;
       border-radius: 30px;
 
-      .introduction, .about-me, .experience {
+      .introduction, .about-me, .experience, .skills, .projects {
         // flex-grow: 0;
         //min-height: 100%;
         display: flex;
@@ -310,7 +310,7 @@
         //background-color: lightgreen;
         padding: 40px 20px 20px 20px;
 
-        .introduction-text, .about-me-text, .experience-text {
+        .introduction-text, .about-me-text, .experience-text, .skills-text, .projects-text {
           margin-top: 20px;
           margin-left: 55px;
 
@@ -399,14 +399,15 @@
         align-items: stretch;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        justify-content: space-between;
 
-        padding: 50px 0;
+        padding: 40px 0 20px 0;
       }
       .ag-job_item {
         -ms-flex-preferred-size: calc(33.33333% - 30px);
         flex-basis: calc(33.33333% - 30px);
 
-        margin: 0 15px 30px;
+        //margin: 0 15px 30px;
 
         overflow: hidden;
 
@@ -492,8 +493,43 @@
         background-color: #4c49ea;
       }
 
+      .skills-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 40px 20px 20px 0;
 
+        .skill {
+          text-align: center;
+          color: #E8E8E8;
+          font-family: 'Nunito', sans-serif;
 
+          .image-skill {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 10%;
+          }
+        }
+      }
+
+      .projects-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        align-content: flex-end;
+        justify-content: space-between;
+        padding: 40px 20px 20px 0;
+
+        .image-project {
+          width: 600px;
+          height: 308.93px;
+          border-radius: 20px;
+          object-fit: cover;
+          object-position: center;
+          margin-left: 150px;
+        }
+      }
       // @media only screen and (max-width: 979px) {
       //   .ag-job_item {
       //     -ms-flex-preferred-size: calc(50% - 30px);
