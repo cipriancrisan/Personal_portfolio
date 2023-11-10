@@ -1,74 +1,3 @@
-<%# <div class="poster">
-  <div class="profile">
-    <div class="hey-there">
-      <p>Hey there, I'm</p>
-      <p>Ciprian CRISAN</p>
-    </div>
-  </div>
-  <div class="container">
-    <div class="about-me-text">
-      <h1>About me</h1>
-      <p>
-        As a junior full-stack web developer with a background in mechanical engineering, I am passionate about using technology to make a positive impact in the world. Being a sport and a nature enthusiast, the human-nature relationship represents the starting point of my every project. Through innovative solutions, my goal is to contribute meaningfully to society and make a positive impact on people's life around me.
-      </p>
-    </div>
-    <div class="My experience">
-      <h1>My experience</h1>
-      <p>
-        In October 2022 I took the leap and embarked on the Le Wagon’s Bootcamp adventure. For 6 intense months, while having a full time job, I spent my evenings and weekends studying, using all my human resources and balancing everything in my life to reach my goal of becoming a full-stack web developer. And I did it, what a thrill this is.
-        During this amazing boot camp, I acquired new foundational skills like: Ruby, Ruby On Rails, MVC, PostgreSQL, HTML, CSS, JavaScript, Heroku, GitHub, how to create a project from scratch, how to lead a web development project and many more.
-        A big thank you to my Le Wagon community, to all the teachers that were there to support us on every step, and to all my classmates that made this journey an unforgettable one.
-        Kudos to my coding mates Stephan Knorn, Lorenzo Bertolino and Fahad Jibran, with whom I worked together to bring to life a wonderful project idea which is AllShare.
-      </p>
-    </div>
-  </div>
-</div> %>
-
-<%# <div class="background-container">
-  <div class="sidebar">
-    <div class="personal-info">
-      <div class="name">
-        <h1>Ciprian CRISAN</h1>
-      </div>
-      <div class="job-title">
-        <p>Tech Pioneer</p>
-      </div>
-    </div>
-    <div class="menu">
-      <ul>
-        <li><a href="#">Introduction</a></li>
-        <li><a href="#">About me</a></li>
-        <li><a href="#">Experience</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="social-media-logos">
-      <ul>
-        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-        <li><a href="#"><i class="fab fa-github"></i></a></li>
-        <li><a href="#"><i class="fas fa-envelope"></i></a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="content">
-    <div class="profile-picture">
-      <%= image_tag('profile/profile_photo.jpg', class: 'scaled-profile-photo') %>
-    <%# </div>
-    <div class="main-content">
-      <section class="fixed-buttons">
-        <a href="#">DOWNLOAD MY CV</a>
-        <button id="getInTouchButton" class="contact-button">GET IN TOUCH</button>
-      </section>
-      <section class="introduction">
-        <h1>Hello! I am Ciprian, a Tech Pioneer on a quest to change the world!</h1>
-        <p>Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-      </section>
-    </div>
-  </div>
-</div> %>
-
 <div class="background-container">
   <aside class="sidebar">
     <section class="name">
@@ -93,10 +22,6 @@
       </ul>
     </section>
   </aside>
-
-  <%# <section class="profile-pic">
-    <%= image_tag('profile/profile_photo.jpg', class: 'scaled-profile-photo', alt: "Ciprian's profile picture") %>
-  <%# </section> %>
 
   <div id="image-track">
     <%= image_tag('profile/me-huayna.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
@@ -127,7 +52,7 @@
             <h1>Hello! I am Ciprian,</h1>
             <h2>I'm passionate about technology and its potential to make a positive difference in our world.</h2>
             <p>As a junior full-stack web developer with a background in mechanical engineering, I am passionate about using technology to make a positive impact in the world. Being a sport and a nature enthusiast, the human-nature relationship represents the starting point of my every project. Through innovative solutions, my goal is to contribute meaningfully to society and make a positive impact on people's life around me.</p>
-            <%# <%= image_tag('thumbnails/intro-timeline.png', class: 'intro-timeline', alt: "Ciprian's profile picture") %> %>
+            <%# <%= image_tag('thumbnails/intro-timeline.png', class: 'intro-timeline', alt: "Ciprian's profile picture") %>
           </div>
           <%# <div class="introduction-pic">
             <%= image_tag('thumbnails/intro-timeline.png', class: 'intro-timeline', alt: "Ciprian's profile picture") %>
@@ -139,6 +64,19 @@
             <i class="fa-solid fa-mountain"></i>
             <i class="fa-solid fa-person-biking"></i>
           </div> %>
+        </section>
+
+        <section class="introduction">
+          <div class="label-container">
+            <div class="label-number">1</div>
+            <div class="label-title">INTRODUCTION</div>
+            <hr class="horizontal-line">
+          </div>
+          <div class="introduction-text">
+            <h1>Hello! I am Ciprian,</h1>
+            <h2>I'm passionate about technology and its potential to make a positive difference in our world.</h2>
+            <p>As a junior full-stack web developer with a background in mechanical engineering, I am passionate about using technology to make a positive impact in the world. Being a sport and a nature enthusiast, the human-nature relationship represents the starting point of my every project. Through innovative solutions, my goal is to contribute meaningfully to society and make a positive impact on people's life around me.</p>
+          </div>
         </section>
 
         <%# <section class="about-me">
@@ -157,26 +95,17 @@
   </main>
 </div>
 
-<script>
+<%# <script>
 const imageTrack = document.getElementById('image-track');
 
-// Duplicating content for infinite scroll effect
-imageTrack.innerHTML += imageTrack.innerHTML;
-
-const scrollAmount = 600;  // The amount to scroll for each wheel event
-const smoothDuration = 60;  // Duration in milliseconds for the smooth scroll effect
+const scrollAmount = 500;  // The amount to scroll for each wheel event
 
 imageTrack.addEventListener('wheel', function(event) {
-    // Determine the scroll direction: 1 for Downwards, -1 for Upwards
     let direction = event.deltaY > 0 ? 1 : -1;
-
-    // Calculate the target scroll position
     let targetPosition = imageTrack.scrollTop + direction * scrollAmount;
 
-    // Apply smooth scroll to the target position
     smoothScrollTo(targetPosition);
-
-    event.preventDefault();  // Prevent the default scroll behavior
+    event.preventDefault();
 }, { passive: false });
 
 function smoothScrollTo(targetPosition) {
@@ -188,9 +117,7 @@ function smoothScrollTo(targetPosition) {
 
 imageTrack.addEventListener('scroll', function() {
     if (imageTrack.scrollTop + imageTrack.clientHeight >= imageTrack.scrollHeight) {
-        setTimeout(() => {
-            customSmoothScrollTo(imageTrack, 0, 1000);  // 2000ms duration for going back up
-        }, 50);  // Give a slight delay before scrolling back to the top
+        customSmoothScrollTo(imageTrack, 0, 1000);  // Smoothly scroll back to the top
     }
 });
 
@@ -201,7 +128,7 @@ function customSmoothScrollTo(element, targetPosition, duration) {
     function animate(time) {
         if (startTime === null) startTime = time;
         const timeElapsed = time - startTime;
-        const progress = Math.min(timeElapsed / duration, 1);  // Ensure it's between 0 and 1
+        const progress = Math.min(timeElapsed / duration, 1);
 
         element.scrollTop = startPosition + (targetPosition - startPosition) * easeInOutQuad(progress);
         if (progress < 1) {
@@ -215,4 +142,4 @@ function customSmoothScrollTo(element, targetPosition, duration) {
 function easeInOutQuad(t) {
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 }
-</script>
+</script> %>
