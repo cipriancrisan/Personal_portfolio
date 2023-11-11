@@ -207,6 +207,50 @@
           </div>
         </div>
       </section>
+
+      <section class="contact">
+        <div class="label-container">
+          <div class="label-number">6</div>
+          <div class="label-title">CONTACT</div>
+          <hr class="horizontal-line">
+        </div>
+
+        <%= form_with model: @contact_message, url: contact_path, local: true do |form| %>
+          <% if @contact_message.errors.any? %>
+            <div id="error_exaplanation">
+              <h2><%= pluralize(@contact_message.errors.count, "error") %> prohibited this message from being sent:</h2>
+              <ul>
+                <% @contact_message.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div>
+            <%= form.text_field :name, placeholder: 'Full name' %>
+          </div>
+
+          <div>
+            <%= form.label :email %>
+            <%= form.email_field :email %>
+          </div>
+
+          <div>
+            <%= form.label :subject %>
+            <%= form.text_field :subject %>
+          </div>
+
+          <div>
+            <%= form.label :message %>
+            <%= form.text_area :message %>
+          </div>
+
+          <div>
+            <%= form.submit "Send Message" %>
+          </div>
+        <% end %>
+      </section>
     </div>
   </main>
 </div>
