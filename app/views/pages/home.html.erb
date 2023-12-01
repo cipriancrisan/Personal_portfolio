@@ -214,42 +214,43 @@
           <div class="label-title">CONTACT</div>
           <hr class="horizontal-line">
         </div>
+        <div class="contact-form">
+          <%= form_with model: @contact_message, url: contact_path, local: true do |form| %>
+            <% if @contact_message.errors.any? %>
+              <div id="error_exaplanation">
+                <h2><%= pluralize(@contact_message.errors.count, "error") %> prohibited this message from being sent:</h2>
+                <ul>
+                  <% @contact_message.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
 
-        <%= form_with model: @contact_message, url: contact_path, local: true do |form| %>
-          <% if @contact_message.errors.any? %>
-            <div id="error_exaplanation">
-              <h2><%= pluralize(@contact_message.errors.count, "error") %> prohibited this message from being sent:</h2>
-              <ul>
-                <% @contact_message.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-              </ul>
+            <div class="contact-input-group">
+              <%= form.text_field :name, placeholder: 'Full name', id: 'name_field' %>
+            </div>
+
+            <div class="contact-input-group">
+              <%= form.label :email %>
+              <%= form.email_field :email %>
+            </div>
+
+            <div class="contact-input-group">
+              <%= form.label :subject %>
+              <%= form.text_field :subject %>
+            </div>
+
+            <div class="contact-input-group">
+              <%= form.label :message %>
+              <%= form.text_area :message, rows: '8' %>
+            </div>
+
+            <div class="contact-input-group">
+              <%= form.submit "Send Message" %>
             </div>
           <% end %>
-
-          <div>
-            <%= form.text_field :name, placeholder: 'Full name' %>
-          </div>
-
-          <div>
-            <%= form.label :email %>
-            <%= form.email_field :email %>
-          </div>
-
-          <div>
-            <%= form.label :subject %>
-            <%= form.text_field :subject %>
-          </div>
-
-          <div>
-            <%= form.label :message %>
-            <%= form.text_area :message %>
-          </div>
-
-          <div>
-            <%= form.submit "Send Message" %>
-          </div>
-        <% end %>
+        </div>
       </section>
     </div>
   </main>
