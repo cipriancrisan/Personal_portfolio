@@ -25,7 +25,7 @@
 
   <div id="image-track">
     <%= image_tag('profile/me-huayna.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
-    <%= image_tag('profile/profile_photo.jpg', class: 'image', alt: "Ciprian's profile picture") %>
+    <%# <%= image_tag('profile/profile_photo.jpg', class: 'image', alt: "Ciprian's profile picture") %>
     <%= image_tag('profile/me-paris.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
     <%= image_tag('profile/me-trains.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
     <%= image_tag('profile/me-triatlon.jpeg', class: 'image', alt: "Ciprian's profile picture") %>
@@ -82,6 +82,13 @@
 
           So now I am on a mission to change my career and take on new challenges! </p>
         </div>
+        <script>
+          import { Application } from '@splinetool/runtime';
+
+          const canvas = document.getElementById('canvas3d');
+          const app = new Application(canvas);
+          app.load('https://prod.spline.design/AQJWBucGo7OGDpe6/scene.splinecode');
+        </script>
       </section>
 
       <section class="experience">
