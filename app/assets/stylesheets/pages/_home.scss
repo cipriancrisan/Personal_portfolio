@@ -568,7 +568,7 @@
         .contact-form {
           width: 70%;
           margin: 0 auto;
-          //padding: 40px 20px 20px 0;
+          padding: 80px 20px 20px 0;
 
           .contact-input-group {
             margin-bottom: 30px;
@@ -576,6 +576,13 @@
             input, textarea, button {
               width: 100%;
               padding: 8px;
+              outline: none;
+              border: none;
+              border-bottom: 1px solid #6D6D6D;
+              color: #bebec1;
+              font-size: 1.2rem;
+              font-family: 'Nunito', sans-serif;;
+              background-color: transparent;
             }
 
             label {
@@ -585,40 +592,7 @@
           }
         }
       }
-      // @media only screen and (max-width: 979px) {
-      //   .ag-job_item {
-      //     -ms-flex-preferred-size: calc(50% - 30px);
-      //     flex-basis: calc(50% - 30px);
-      //   }
-      //   .ag-job-item_title {
-      //     font-size: 24px;
-      //   }
-      // }
 
-      // @media only screen and (max-width: 767px) {
-      //   .ag-format-container {
-      //     width: 96%;
-      //   }
-
-      // }
-      // @media only screen and (max-width: 639px) {
-      //   .ag-job_item {
-      //     -ms-flex-preferred-size: 100%;
-      //     flex-basis: 100%;
-      //   }
-      //   .ag-job-item_title {
-      //     min-height: 72px;
-      //     line-height: 1;
-
-      //     font-size: 24px;
-      //   }
-      //   .ag-job-item_link {
-      //     padding: 22px 40px;
-      //   }
-      //   .ag-job-item_date-box {
-      //     font-size: 16px;
-      //   }
-      // }
     }
   }
 
